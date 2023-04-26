@@ -1,0 +1,24 @@
+Questions:
+TABLE1:
+
+create table EmployeeDetails(EmpId int ,FullName varchar(50),ManagerId int,DateOfJoining date,City varchar(20));
+insert into EmployeeDetails values(121,'John Snow',321,'2019/01/31','Toronto'),(321,'Water White',986,'2020/01/30','California'),(421,'Kuldeep Rana',876,'2021/11/27','New Delhi');
+
+TABLE2:
+create table EmployeeSalary(EmpId int ,Project varchar(50),Salary int,Variable int);
+insert into EmployeeSalary values(121,'P1',8000,500),(321,'P2',10000,1000),(421,'p1',12000,0);
+
+QUESTIONS:
+
+
+2)select EmpId,FullName from EmployeeDetails where ManagerId=986;
+3)select distinct Project from EmployeeSalary;
+4)select count(EmpId)from EmployeeSalary where Project='P1';
+5)select max(Salary),min(Salary),AVG(Salary)from EmployeeSalary;
+6)select EmpId,Salary from EmployeeSalary where Salary between 9000 AND 15000;
+7)select EmpId,City,ManagerId from EmployeeDetails where City='Toronto' AND ManagerId='321';
+8)select EmpId,City,ManagerId from EmployeeDetails where City='California' OR  ManagerId='321';
+9)select FullName from EmployeeDetails where FullName LIKE'__hn%';
+10)select EmpId from EmployeeDetails union  select EmpId from EmployeeSalary;
+11)select * from EmployeeDetails left join  EmployeeSalary using(EmpId); 
+12)select EmpId from EmployeeDetails EmployeeDetails where EmpId IN (select EmpId from EmployeeSalary);
